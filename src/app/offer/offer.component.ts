@@ -18,11 +18,7 @@ export class OfferComponent implements OnInit {
 
   ngOnInit() {
     this.offersService.getOffetById(this.activatedRoute.snapshot.params['id'])
-      .then((offer: Offer) =>  
-      {
-        console.log(offer)
-        this.offer = offer
-      })
+      .then((offer: Offer) =>  this.offer = offer)
       .catch((err: any) => console.log(err))
   }
 

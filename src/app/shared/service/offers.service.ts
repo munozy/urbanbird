@@ -13,35 +13,36 @@ export class OffersService {
 
     public getOffers(): Promise<Offer[]> {
         return this.http.get(`${OFFERS_URL_API}?spotlight=true`)
-        .toPromise().then(
-            (response: any) => {
-                return Promise.resolve(response)
-             }
-        ).catch(err => {
-            return Promise.reject(err.error || 'Server error');
-        });
+            .toPromise()
+            .then((response: any) => response)
+            .catch(err =>Promise.reject(err.error || 'Server error'))
     }
 
     public getOffersByCategory(category: string): Promise<Offer[]> {
         return this.http.get(`${OFFERS_URL_API}?category=${category}`)
-        .toPromise().then(
-            (response: any) => {
-                return Promise.resolve(response)
-            }
-        ).catch(err => {
-            return Promise.reject(err.error || 'Server error');
-        });
+            .toPromise()
+            .then((response: any) => response)
+            .catch(err =>Promise.reject(err.error || 'Server error'))
     }
 
     public getOffetById(id: number): Promise<Offer> {
         return this.http.get(`${OFFERS_URL_API}?id=${id}`)
-        .toPromise().then((reponse: any) => {
-            let offer = Promise.resolve(reponse).then((offers: Offer[]) => offers[0])
-            return Promise.resolve(offer)
-        })
-        .catch(err => {
-            return Promise.reject(err.error || 'Server error');
-        });
+            .toPromise()
+            .then((response: any) => response[0])
+            .catch(err =>Promise.reject(err.error || 'Server error'))
+    }
 
+    public getHowToUseById(id: number): Promise<string> {
+        return this.http.get(`${OFFERS_URL_API}/${id}/how-to-use`)
+            .toPromise()
+            .then((response: any) => response[0].description)
+            .catch(err =>Promise.reject(err.error || 'Server error'))
+    }
+
+    public getWhereIsById(id: number): Promise<string> {
+        return this.http.get(`${OFFERS_URL_API}/${id}/where-is`)
+            .toPromise()
+            .then((response: any) => response[0].description)
+            .catch(err =>Promise.reject(err.error || 'Server error'))
     }
 }

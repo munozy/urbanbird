@@ -12,6 +12,8 @@ import { RestaurantComponent } from './restaurant/restaurant.component';
 
 import { ROUTES } from './app.routes';
 import { OfferComponent } from './offer/offer.component';
+import { HowToUseComponent } from './offer/how-to-use/how-to-use.component';
+import { WhereIsComponent } from './offer/where-is/where-is.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { OfferComponent } from './offer/offer.component';
     TopComponent,
     EntertainmentComponent,
     RestaurantComponent,
-    OfferComponent
+    OfferComponent,
+    HowToUseComponent,
+    WhereIsComponent
   ],
   imports: [
     BrowserModule,

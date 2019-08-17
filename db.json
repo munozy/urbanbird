@@ -89,5 +89,57 @@
 				{"url": "/assets/offers/6/img2.jpg"}
 			]
 		}
+    ],
+    "how-to-use": [
+		{
+			"id": 1,
+			"description": "No need to schedule."
+		},
+		{
+			"id": 2,
+			"description": "Valid from Monday to Thursday from 12h to 23h. No need to schedule."
+		},
+		{
+			"id": 3,
+			"description": "No need to schedule."
+		},
+		{
+			"id": 4,
+			"description": "Need to schedule at least 48 hours in advance"
+		},
+		{
+			"id": 5,
+			"description": "Valid from Monday to Thursday from 12h to 16h. Advance booking required."
+		},
+		{
+			"id": 6,
+			"description": "Advance booking required."
+		}
+    ],
+    "where-is": [
+		{
+			"id": 1,
+			"description": "Nowhere street, 1, Neverland"
+		},
+		{
+			"id": 2,
+			"description": "Nowhere street, 2, Neverland"
+		},
+		{
+			"id": 3,
+			"description": "Nowhere street, 3, Neverland"
+		},
+		{
+			"id": 4,
+			"description": "Nowhere street, 4, Neverland"
+		},
+		{
+			"id": 5,
+			"description": "Nowhere street, 5, Neverland"
+		},
+		{
+			"id": 6,
+			"description": "Nowhere street, 6, Neverland"
+		}
 	]
 }
