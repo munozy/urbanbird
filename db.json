@@ -1,0 +1,93 @@
+{ 
+	"offers": [
+		{
+            "id": 1,
+            "category": "restaurant",
+            "title": "Super Burger",
+            "description": "Miniburger at will with entry option.",
+            "advertiser": "Original Burger",
+            "price": 29.90,
+            "spotlight": true,
+            "images": [
+                {"url": "/assets/offers/1/img1.jpg"},
+                {"url": "/assets/offers/1/img2.jpg"},
+                {"url": "/assets/offers/1/img3.jpg"},
+                {"url": "/assets/offers/1/img4.jpg"}
+            ]
+        },
+        {
+            "id": 2,
+            "category": "restaurant",
+            "title": "Mexican Cuisine",
+            "description": "The best of Mexican cuisine at will.",
+            "advertiser": "Mexicana",
+            "price": 32.90,
+            "spotlight": true,
+            "images": [
+                {"url": "/assets/offers/2/img1.jpg"},
+                {"url": "/assets/offers/2/img2.jpg"},
+                {"url": "/assets/offers/2/img3.jpg"},
+                {"url": "/assets/offers/2/img4.jpg"}
+            ]
+        
+        },
+		{
+			"id": 3,
+			"category": "restaurant",
+			"title": "Delicious Big Pizzas",
+			"description": "All kind of pizza.",
+			"advertiser": "Casa Nostra",
+			"price": 21.90,
+			"spotlight": false,
+			"images": [
+				{"url": "/assets/offers/3/img1.jpg"},
+				{"url": "/assets/offers/3/img2.jpg"},
+				{"url": "/assets/offers/3/img3.jpg"},
+				{"url": "/assets/offers/3/img4.jpg"}
+			]
+		},
+        {
+            "id": 4,
+            "category": "entertainment",
+            "title": "Water park",
+            "description": "Pools, water slides, and more.",
+            "advertiser": "AquaFun",
+            "price": 31.90,
+            "spotlight": true,
+            "images": [
+                {"url": "/assets/offers/4/img1.jpg"},
+                {"url": "/assets/offers/4/img2.jpg"},
+                {"url": "/assets/offers/4/img3.jpg"},
+                {"url": "/assets/offers/4/img4.jpg"},
+                {"url": "/assets/offers/4/img5.jpg"},
+                {"url": "/assets/offers/4/img6.jpg"}
+            ]
+        },
+		{
+			"id": 5,
+			"category": "entertainment",
+			"title": "Kart",
+			"description": "Kart race 30 minutes.",
+			"advertiser": "Speed Kart",
+			"price": 54.80,
+			"spotlight": false,
+			"images": [
+				{"url": "/assets/offers/5/img1.jpg"},
+				{"url": "/assets/offers/5/img2.jpg"}
+			]
+		},
+		{
+			"id": 6,
+			"category": "entertainment",
+			"title": "Magic Farm",
+			"description": "Horseback ride in nature, trails and more.",
+			"advertiser": "Magic Farm",
+			"price": 64.70,
+			"spotlight": false,
+			"images": [
+				{"url": "/assets/offers/6/img1.jpg"},
+				{"url": "/assets/offers/6/img2.jpg"}
+			]
+		}
+	]
+}

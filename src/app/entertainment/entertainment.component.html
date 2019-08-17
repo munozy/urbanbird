@@ -1,0 +1,44 @@
+<div class="container">
+  
+    <div class="section">
+      <h3 class="text-center">Entertainments</h3>
+      <h5 class="text-center">Check out the best offers to have fun when you want:</h5>
+    </div>
+  
+    <hr />
+  
+    <div *ngFor="let offer of offers">
+
+      <div class="row">
+        <div class="col-md-4">
+          <img [src]="offer.images[0].url" class="img-fluid"/>
+        </div>
+    
+        <div class="col-md-8">
+          <div class="row">
+            <h4>{{ offer.title }}</h4>
+          </div>
+    
+          <div class="row">
+              <h5>{{ offer.offer_description }}</h5>
+            </div>
+      
+            <div class="row">
+              <p>Advertised by: <b>{{ offer.advertiser }}</b></p>
+            </div>
+      
+            <div class="row">
+              <p>$ {{ offer.price }}</p>
+            </div>
+    
+          <div class="row">
+            <button [routerLink]="['/offer',offer.id]" class="btn btn-outline-success">See offer</button>
+          </div>
+        </div>
+      </div>
+    
+      <hr />
+
+  </div>
+    
+  </div>
