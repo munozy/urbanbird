@@ -3,6 +3,9 @@ import { Injectable } from '@angular/core'
 
 import { Offer } from '../model/offer.model'
 import { OFFERS_URL_API } from '../url.api'
+import { Observable } from 'rxjs'
+
+import { map, retry } from 'rxjs/operators'
 
 @Injectable()
 export class OffersService {
@@ -44,5 +47,13 @@ export class OffersService {
             .toPromise()
             .then((response: any) => response[0].description)
             .catch(err =>Promise.reject(err.error || 'Server error'))
+    }
+
+    public searchOffers(search: string): Observable<Offer[]> {
+        return this.http.get<Offer[]>(`${OFFERS_URL_API}?title_like=${search}`)
+        .pipe(
+            retry(10), // retry acces the server 10 times
+            map((response: Offer[]) => response)
+        )
     }
 }
