@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 
 import { Offer } from '../model/offer.model'
-import { OFFERS_URL_API } from '../url.api'
+import { OFFERS_URL_API, ROOT_URL_API } from '../url.api'
 import { Observable } from 'rxjs'
 
 import { map, retry } from 'rxjs/operators'
@@ -36,14 +36,14 @@ export class OffersService {
     }
 
     public getHowToUseById(id: number): Promise<string> {
-        return this.http.get(`${OFFERS_URL_API}/${id}/how-to-use`)
+        return this.http.get(`${ROOT_URL_API}/how-to-use?id=${id}`)
             .toPromise()
             .then((response: any) => response[0].description)
             .catch(err =>Promise.reject(err.error || 'Server error'))
     }
 
     public getWhereIsById(id: number): Promise<string> {
-        return this.http.get(`${OFFERS_URL_API}/${id}/where-is`)
+        return this.http.get(`${ROOT_URL_API}/where-is?id=${id}`)
             .toPromise()
             .then((response: any) => response[0].description)
             .catch(err =>Promise.reject(err.error || 'Server error'))

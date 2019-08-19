@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {  ActivatedRoute } from '@angular/router'
+import {  ActivatedRoute, Params } from '@angular/router'
 
 import { OffersService } from '../../shared/service/offers.service'
 
@@ -16,9 +16,13 @@ export class WhereIsComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private offersService: OffersService) { }
 
   ngOnInit() {
-    this.offersService.getWhereIsById(this.activatedRoute.parent.snapshot.params['id'])
-      .then((whereIs: string) =>  this.whereIs = whereIs)
-      .catch((err: any) => console.log(err))
+    this.activatedRoute.parent.params.subscribe(
+      (params: Params) => {
+        this.offersService.getWhereIsById(params.id)
+        .then((whereIs: string) =>  this.whereIs = whereIs)
+        .catch((err: any) => console.log(err))
+      }
+    )
   }
 
 }

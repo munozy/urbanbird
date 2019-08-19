@@ -17,7 +17,7 @@ export class TopComponent implements OnInit {
 
   public offers: Observable<Offer[]>
 
-  public displayedOffers: Offer[]
+  // public displayedOffers: Offer[] // useless, because "pipe async" is used in template
 
   public searchOfOffers: Subject<string> = new Subject()
 
@@ -43,13 +43,20 @@ export class TopComponent implements OnInit {
       )
     )
 
-    this.offers.subscribe(
-      (offers: Offer[]) => this.displayedOffers = offers
-    )
+    /**
+     * useless, because "pipe async" is used in template
+     * 
+      this.offers.subscribe(
+        (offers: Offer[]) => this.displayedOffers = offers
+      )
+    */
   }
 
-  public  search(termOfSearch: string): void {
+  public search(termOfSearch: string): void {
     this.searchOfOffers.next(termOfSearch)
   }
 
+  public cleanSearch(): void {
+    this.searchOfOffers.next('')
+  }
 }

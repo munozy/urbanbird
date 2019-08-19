@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
 import { RouterModule } from '@angular/router'
 
@@ -15,6 +15,14 @@ import { OfferComponent } from './offer/offer.component';
 import { HowToUseComponent } from './offer/how-to-use/how-to-use.component';
 import { WhereIsComponent } from './offer/where-is/where-is.component';
 
+import { CurtailTextPipe } from './shared/util/curtail-text.pipe'
+
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+import localeFrExtra from '@angular/common/locales/extra/fr';
+
+registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,14 +33,15 @@ import { WhereIsComponent } from './offer/where-is/where-is.component';
     RestaurantComponent,
     OfferComponent,
     HowToUseComponent,
-    WhereIsComponent
+    WhereIsComponent,
+    CurtailTextPipe
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [ { provide: LOCALE_ID, useValue: 'fr'} ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

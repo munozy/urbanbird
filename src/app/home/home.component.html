@@ -16,14 +16,12 @@
               <p class="card-text">{{ offer.description }}</p>
             </div>
             <div class="card-footer bg-transparent">
-              <p class="price">$ {{ offer.price }}</p>
+              <p class="price">{{ offer.price | currency: 'EUR' :'symbol':'':'fr-FR' }}</p>
               <a [routerLink]="['/offer',offer.id]" class="btn btn-outline-primary">See offer</a>
             </div>
           </div>
       </div>
     </div>
-    <hr />
-    
-    <hr />
+
   </div>
   

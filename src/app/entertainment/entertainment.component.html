@@ -28,7 +28,7 @@
             </div>
       
             <div class="row">
-              <p>$ {{ offer.price }}</p>
+              <p>{{ offer.price | currency: 'EUR' :'symbol':'':'fr-FR' }}</p>
             </div>
     
           <div class="row">
@@ -40,5 +40,6 @@
       <hr />
 
   </div>
+  <br />
     
   </div>
